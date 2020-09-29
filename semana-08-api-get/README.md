@@ -1,17 +1,15 @@
 # API - GET
 
-O projeto consiste de uma API simples que utiliza o método HTTP GET para listar e filtrar informações de três temas diferentes.
+O projeto consiste de uma API simples que utiliza o método HTTP GET para listar e filtrar informações de três arquivos json com temas diferentes.
 
+#### Pacotes utilizados
 
-## Temas
-
-Escolha um dos temas abaixo com muito amor e carinho pois iremos desenvolver um projeto a partir deles.
-
-Iremos descrever com calma e segurança cada um dos itens que esperamos que vocês desenvolvam, ok?
+- Express
+- Nodemon
 
 ---
 
-### Opção 1 - Jogos
+### Tema 1 - Jogos
 
 ```json
 {
@@ -30,7 +28,7 @@ Iremos descrever com calma e segurança cada um dos itens que esperamos que voc�
 
 ---
 
-### Opção 2 - Música
+### Tema 2 - Música
 
 ```json
 {
@@ -63,7 +61,7 @@ Iremos descrever com calma e segurança cada um dos itens que esperamos que voc�
 
 ---
 
-### Opção 3 - Séries
+### Tema 3 - Séries
 
 ### Séries
 
@@ -81,5 +79,3 @@ Iremos descrever com calma e segurança cada um dos itens que esperamos que voc�
 | ------------- | ----------------------------------- |
 | `/series`     | Retorna todas as séries             |
 | `/series/:id` | Retorna apenas uma série específica |
-
----
