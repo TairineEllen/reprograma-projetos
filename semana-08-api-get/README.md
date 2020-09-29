@@ -1,3 +1,8 @@
+# API - GET
+
+O projeto consiste de uma API simples que utiliza o método HTTP GET para listar e filtrar informações de três temas diferentes.
+
+
 ## Temas
 
 Escolha um dos temas abaixo com muito amor e carinho pois iremos desenvolver um projeto a partir deles.
