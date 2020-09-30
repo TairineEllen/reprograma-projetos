@@ -63,8 +63,6 @@ O projeto consiste de uma API simples que utiliza o método HTTP GET para listar
 
 ### Tema 3 - Séries
 
-### Séries
-
 ```json
 {
   "id": 1,

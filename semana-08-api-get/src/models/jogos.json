@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "titulo": "League of LEgends",
+        "dataLancamento": "2009"
+    },
+    {
+        "id": 2,
+        "titulo": "World of Warcraft",
+        "dataLancamento": "2004"
+    },
+    {
+        "id": 3,
+        "titulo": "Minecraft",
+        "dataLancamento": "2009"
+    },
+    {
+        "id": 4,
+        "titulo": "Heroes of Newerth",
+        "dataLancamento": "2010"
+    },
+    {
+        "id": 5,
+        "titulo": "Diablo III",
+        "dataLancamento": "2012"
+    },
+    {
+        "id": 6,
+        "titulo": "Battlefield",
+        "dataLancamento": "2011"
+    },
+    {
+        "id": 7,
+        "titulo": "Maple Story",
+        "dataLancamento": "2003"
+    },
+    {
+        "id": 8,
+        "titulo": "Starcraft II",
+        "dataLancamento": "2010"
+    },
+    {
+        "id": 9,
+        "titulo": "World of Tanks",
+        "dataLancamento": "2010"
+    },
+    {
+        "id": 10,
+        "titulo": "Call of Duty: Modern Warfare III",
+        "dataLancamento": "2011"
+    }
+]
