@@ -1,6 +1,5 @@
 const musicas = require('../models/musicas.json');
 
-
 const getAllMusicas = (req, res) => {     
     res.send(musicas);     
 };
@@ -36,6 +35,7 @@ const getArtistaByID = (req, res) => {
     res.send(musicasArtista);
 };
 
+let musicasDoAlbuns = [];
 const getAllAlbuns = (req, res) => {
     const albuns = []
     const records = musicas.map((record) => record.album).forEach((record) => {
@@ -43,17 +43,21 @@ const getAllAlbuns = (req, res) => {
             albuns.push(record)
         };
     });
-
-    const musicasDoAlbuns = albuns.map((album) => ({
-        album,
+    
+    musicasDoAlbuns = albuns.map((album) => ({
+        titulo: album,
         musicas: musicas.filter((musica) => musica.album == album).map((musica) => ({
             titulo: musica.titulo,
             duracao: musica.duracao
         }))
     }));
-
     res.send(musicasDoAlbuns);
+};
 
+const getAlbumByName = (req, res) => {
+    const nome = req.params.nome;
+    const nomeAlbum = musicasDoAlbuns.find((album) => album.titulo.toLowerCase() == nome.replace(/-/g, ' '));
+    res.send(nomeAlbum);
 }
 
 module.exports = {
@@ -61,5 +65,6 @@ module.exports = {
     getMusicaByID,
     getAllArtistas,
     getArtistaByID,
-    getAllAlbuns
+    getAllAlbuns,
+    getAlbumByName
 };

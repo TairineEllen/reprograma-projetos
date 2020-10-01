@@ -53,20 +53,20 @@
         "titulo": "Bloodline",
         "duracao": "3:36",
         "artista": "Ariana Grande",
-        "album": "Thank u, Next"
+        "album": "Thank u Next"
     },
     {
         "id": 9,
         "titulo": "Bigger",
         "duracao": "3:46",
         "artista": "Beyoncé",
-        "album": "The Lion King: The Gift"
+        "album": "The Lion King The Gift"
     },
     {
         "id": 10,
-        "titulo": "Formation",
-        "duracao": "3:26",
-        "artista": "Beyoncé",
-        "album": "Lemonade"
+        "titulo": "Into You",
+        "duracao": "4:04",
+        "artista": "Ariana Grande",
+        "album": "Dangerous Woman"
     }
 ]
