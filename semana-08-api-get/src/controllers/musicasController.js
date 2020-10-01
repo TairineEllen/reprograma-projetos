@@ -36,21 +36,30 @@ const getArtistaByID = (req, res) => {
     res.send(musicasArtista);
 };
 
-// const getAlbum = (req, res) => {
-//     const albuns = []
-//     const records = musicas.map((record) => record.album).forEach((record) => {
-//         if (albuns.indexOf(record) === -1) {
-//             albuns.push(record)
-//         };
-//     });
- 
-//     res.send(musicasAlbum);
+const getAllAlbuns = (req, res) => {
+    const albuns = []
+    const records = musicas.map((record) => record.album).forEach((record) => {
+        if (albuns.indexOf(record) === -1) {
+            albuns.push(record)
+        };
+    });
 
-// }
+    const musicasDoAlbuns = albuns.map((album) => ({
+        album,
+        musicas: musicas.filter((musica) => musica.album == album).map((musica) => ({
+            titulo: musica.titulo,
+            duracao: musica.duracao
+        }))
+    }));
+
+    res.send(musicasDoAlbuns);
+
+}
 
 module.exports = {
     getAllMusicas,
     getMusicaByID,
     getAllArtistas,
-    getArtistaByID
+    getArtistaByID,
+    getAllAlbuns
 };

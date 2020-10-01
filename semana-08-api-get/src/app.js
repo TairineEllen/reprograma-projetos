@@ -6,6 +6,7 @@ const series = require('./routes/seriesRoute');
 const jogos = require('./routes/jogosRoute');
 const musicas = require('./routes/musicasRoute');
 const artistas = require('./routes/artistasRoute');
+const albuns = require('./routes/albunsRoute.js');
 
 app.use('/', (req, res, next) => {
     console.log('Nova requisicao realizada');
@@ -17,6 +18,7 @@ app.use('/series', series);
 app.use('/jogos', jogos);
 app.use('/musicas', musicas);
 app.use('/artistas', artistas);
+app.use('/albuns', albuns);
 
 
 app.use('*', (req, res) => {
