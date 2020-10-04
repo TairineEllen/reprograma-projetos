@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "titulo": "911",
+        "duracao": "2:52",
+        "artista": "Lady Gaga",
+        "album": "Chromatica"
+    },
+    {
+        "id": 2,
+        "titulo": "Rain On Me",
+        "duracao": "3:02",
+        "artista": "Lady Gaga",
+        "album": "Chromatica"
+    },
+    {
+        "id": 3,
+        "titulo": "Stupid Love",
+        "duracao": "3:13",
+        "artista": "Lady Gaga",
+        "album": "Chromatica"
+    },
+    {
+        "id": 4,
+        "titulo": "Sour Candy",
+        "duracao": "2:37",
+        "artista": "Lady Gaga",
+        "album": "Chromatica"
+    },
+    {
+        "id": 5,
+        "titulo": "Free Woman",
+        "duracao": "3:11",
+        "artista": "Lady Gaga",
+        "album": "Chromatica"
+    },
+    {
+        "id": 6,
+        "titulo": "Adore You",
+        "duracao": "3:27",
+        "artista": "Harry Styles",
+        "album": "Fine Line"
+    },
+    {
+        "id": 7,
+        "titulo": "Watermelon Sugar",
+        "duracao": "2:54",
+        "artista": "Harry Styles",
+        "album": "Fine Line"
+    },
+    {
+        "id": 8,
+        "titulo": "Bloodline",
+        "duracao": "3:36",
+        "artista": "Ariana Grande",
+        "album": "Thank u Next"
+    },
+    {
+        "id": 9,
+        "titulo": "Bigger",
+        "duracao": "3:46",
+        "artista": "Beyoncé",
+        "album": "The Lion King The Gift"
+    },
+    {
+        "id": 10,
+        "titulo": "Into You",
+        "duracao": "4:04",
+        "artista": "Ariana Grande",
+        "album": "Dangerous Woman"
+    }
+]
