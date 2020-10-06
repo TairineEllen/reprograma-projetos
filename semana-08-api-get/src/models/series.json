@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "titulo": "Friends",
+        "duracao": "10 temporadas"
+    },
+    {
+        "id": 2,
+        "titulo": "Anne With An E",
+        "duracao": "3 temporadas"
+    },
+    {
+        "id": 3,
+        "titulo": "Orphan Black",
+        "duracao": "5 temporadas"
+    },
+    {
+        "id": 4,
+        "titulo": "Big Little Lies",
+        "duracao": "2 temporadas"
+    },
+    {
+        "id": 5,
+        "titulo": "Crazy Ex-Girlfriend",
+        "duracao": "4 temporadas"
+    },
+    {
+        "id": 6,
+        "titulo": "Gossip Girl",
+        "duracao": "6 temporadas"
+    },
+    {
+        "id": 7,
+        "titulo": "Parks and Recreation",
+        "duracao": "7 temporadas"
+    },
+    {
+        "id": 8,
+        "titulo": "Fleabag",
+        "duracao": "2 temporadas"
+    },
+    {
+        "id": 9,
+        "titulo": "The Royals",
+        "duracao": "4 temporadas"
+    },
+    {
+        "id": 10,
+        "titulo": "The Vampire Diaries",
+        "duracao": "8 temporadas"
+    }
+]
