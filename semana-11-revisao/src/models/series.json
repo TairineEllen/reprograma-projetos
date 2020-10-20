@@ -112,5 +112,212 @@
         ]
       }
     ]
+  },
+  {
+    "id": 3,
+    "name": "We're Here",
+    "genre": "Reality",
+    "synopsis": "Em cada episódio, as renomadas drag queens Bob the Drag Queen, Eureka O'Hara e Shangela Laquifa Wadley irão inspirar e ensinar suas próprias “filhas drag” (...)",
+    "liked": true,
+    "seasons": [
+      {
+        "id": 1,
+        "code": "season01",
+        "episodes": [
+          {
+            "id": 1,
+            "code": "ep01",
+            "name": "Gettysburg, Pennsylvania",
+            "watched": true
+          },
+          {
+            "id": 2,
+            "code": "ep02",
+            "name": "Twin Falls, Idaho",
+            "watched": true
+          },
+          {
+            "id": 3,
+            "code": "ep03",
+            "name": "Branson, Missouri",
+            "watched": false
+          },
+          {
+            "id": 4,
+            "code": "ep04",
+            "name": "Farmington, New Mexico",
+            "watched": false
+          },
+          {
+            "id": 5,
+            "code": "ep05",
+            "name": "Ruston, Louisiana",
+            "watched": false
+          },
+          {
+            "id": 6,
+            "code": "ep06",
+            "name": "Spartanburg, We Make It Werk",
+            "watched": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "My Brilliant Friend",
+    "genre": "Drama",
+    "synopsis": "Elena Greco e Raffaella Cerullo, a Lila, se conhecem desde o primeiro ano da escola primária, em 1950. Depois de descobrir que a melhor amiga parece ter desaparecido, Elena, uma mulher agora idosa, começa a escrever a história da amizade e, de certa forma, de inimizade das duas.",
+    "liked": true,
+    "seasons": [
+      {
+        "id": 1,
+        "code": "season01",
+        "episodes": [
+          {
+            "id": 1,
+            "code": "ep01",
+            "name": "The Dolls",
+            "watched": true
+          },
+          {
+            "id": 2,
+            "code": "ep02",
+            "name": "The Money",
+            "watched": true
+          },
+          {
+            "id": 3,
+            "code": "ep03",
+            "name": "The Metamorphoses",
+            "watched": true
+          },
+          {
+            "id": 4,
+            "code": "ep04",
+            "name": "Dissolving Boundaries",
+            "watched": false
+          },
+          {
+            "id": 5,
+            "code": "ep05",
+            "name": "The Shoes",
+            "watched": false
+          },
+          {
+            "id": 6,
+            "code": "ep06",
+            "name": "The Island",
+            "watched": false
+          },
+          {
+            "id": 7,
+            "code": "ep07",
+            "name": "The Fiancés",
+            "watched": false
+          },
+          {
+            "id": 8,
+            "code": "ep08",
+            "name": "The Promise",
+            "watched": false
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "code": "season02",
+        "episodes": [
+          {
+            "id": 1,
+            "code": "ep01",
+            "name": "The New Name",
+            "watched": true
+          },
+          {
+            "id": 2,
+            "code": "ep02",
+            "name": "The Body",
+            "watched": true
+          },
+          {
+            "id": 3,
+            "code": "ep03",
+            "name": "Erasure",
+            "watched": false
+          },
+          {
+            "id": 4,
+            "code": "ep04",
+            "name": "The Kiss",
+            "watched": false
+          },
+          {
+            "id": 5,
+            "code": "ep05",
+            "name": "The Betrayal",
+            "watched": false
+          },
+          {
+            "id": 6,
+            "code": "ep06",
+            "name": "Rage",
+            "watched": false
+          },
+          {
+            "id": 7,
+            "code": "ep07",
+            "name": "Ghosts",
+            "watched": false
+          },
+          {
+            "id": 8,
+            "code": "ep08",
+            "name": "The Blue Fairy",
+            "watched": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Mixed-ish",
+    "genre": "Comédia",
+    "synopsis": "Os pais de Rainbow Johnson, Paul e Alicia, decidem se mudar de uma comunidade hippie para os subúrbios, para prover uma condição de vida melhor para sua família. Enquanto os pais dela lutam com os desafios da nova vida, Bow e seus irmãos têm de lidar com a vida em uma escola comum, onde eles não são reconhecidos como negros e tampouco como brancos.",
+    "liked": true,
+    "seasons": [
+      {
+        "id": 1,
+        "code": "season01",
+        "episodes": [
+          {
+            "id": 1,
+            "code": "ep01",
+            "name": "Becoming Bow",
+            "watched": true
+          },
+          {
+            "id": 2,
+            "code": "ep02",
+            "name": "The Warrior",
+            "watched": true
+          },
+          {
+            "id": 3,
+            "code": "ep03",
+            "name": "Let Your Hair Down",
+            "watched": true
+          },
+          {
+            "id": 4,
+            "code": "ep04",
+            "name": "Love is a Battlefield",
+            "watched": false
+          }
+        ]
+      }
+    ]
   }
 ]
