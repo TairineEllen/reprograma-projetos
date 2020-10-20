@@ -1,9 +1,9 @@
 [
   {
     "id": 1,
-    "name": "Hanna",
-    "genre": "Aventura",
-    "synopsis": "Um suspense bem elaborado e um drama sobre o amadurecimento, HANNA segue a jonada de uma jovem (...)",
+    "name": "Good Trouble",
+    "genre": "Drama",
+    "synopsis": "Spin-off de The Fosters, A série acompanha a história das irmãs Callie e Mariana, que embarcam para Los Angeles, na Califórnia, para começarem a vida após a faculdade.",
     "liked": true,
     "seasons": [
       {
@@ -13,19 +13,19 @@
           {
             "id": 1,
             "code": "ep01",
-            "name": "Episódio 1",
+            "name": "DTLA",
             "watched": true
           },
           {
             "id": 2,
             "code": "ep02",
-            "name": "Episódio 2",
+            "name": "The Cotterie",
             "watched": false
           },
           {
             "id": 3,
             "code": "ep03",
-            "name": "Episódio 3",
+            "name": "Allies",
             "watched": false
           }
         ]
@@ -37,19 +37,19 @@
           {
             "id": 1,
             "code": "ep01",
-            "name": "Episódio 1",
+            "name": "Percussions",
             "watched": false
           },
           {
             "id": 2,
             "code": "ep02",
-            "name": "Episódio 2",
+            "name": "Torn",
             "watched": false
           },
           {
             "id": 3,
             "code": "ep03",
-            "name": "Episódio 3",
+            "name": "Doble Quince",
             "watched": false
           }
         ]
