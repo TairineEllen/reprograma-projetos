@@ -1,0 +1,15 @@
+{
+  "name": "semana-11-revisao",
+  "version": "1.0.0",
+  "description": "",
+  "main": "\u001b[A API de séries\u001b[B\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001bserver.js)",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "TairineEllen",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.6"
+  }
+}
