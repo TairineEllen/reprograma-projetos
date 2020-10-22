@@ -319,5 +319,56 @@
         ]
       }
     ]
+  },
+  {
+    "id": 6,
+    "name": "Teste",
+    "genre": "Teste",
+    "synopsis": "Teste",
+    "liked": true,
+    "seasons": [
+      {
+        "id": 1,
+        "code": "season01",
+        "episodes": [
+          {
+            "id": 1,
+            "code": "ep01",
+            "name": "Gettysburg, Pennsylvania",
+            "watched": true
+          },
+          {
+            "id": 2,
+            "code": "ep02",
+            "name": "Twin Falls, Idaho",
+            "watched": true
+          },
+          {
+            "id": 3,
+            "code": "ep03",
+            "name": "Branson, Missouri",
+            "watched": false
+          },
+          {
+            "id": 4,
+            "code": "ep04",
+            "name": "Farmington, New Mexico",
+            "watched": false
+          },
+          {
+            "id": 5,
+            "code": "ep05",
+            "name": "Ruston, Louisiana",
+            "watched": false
+          },
+          {
+            "id": 6,
+            "code": "ep06",
+            "name": "Spartanburg, We Make It Werk",
+            "watched": false
+          }
+        ]
+      }
+    ]
   }
 ]

@@ -64,10 +64,42 @@ const updateSerieWithPut = (req, res) => {
         } else {
           res.status(201).send(series.find(serie => serie.id == id));
         };
-      });      
+      });
     } else {
       res.status(404).send({
         message: 'Série não encontrada'
+      });
+    };
+
+  } catch (error) {
+    res.status(424).send({
+      message: 'Erro interno no servidor'
+    });
+  };
+};
+
+const deleteSerie = (req, res) => {
+  const id = req.params.id;
+  try {
+    const serieToBeDeleted = series.find(serie => serie.id == id);
+    const index = series.indexOf(serieToBeDeleted);
+    if (index >= 0) {
+      series.splice(index, 1);
+      
+      fs.writeFile('./src/models/series.json', JSON.stringify(series), 'utf-8', err => {
+        if (err) {
+          return res.status(424).send({
+            message: 'Erro ao salvar arquivo'
+          });
+        } else {
+          res.status(200).send({
+            message: 'Série deletada com sucesso.'
+          });
+        };
+      });
+    } else {
+      res.status(404).send({
+        message: 'Série não encontrada.'
       });
     };
 
@@ -82,5 +114,6 @@ module.exports = {
   getAllSeries,
   getSerieByID,
   postNewSerie,
-  updateSerieWithPut
+  updateSerieWithPut,
+  deleteSerie
 };

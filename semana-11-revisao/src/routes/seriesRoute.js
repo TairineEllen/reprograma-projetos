@@ -6,5 +6,6 @@ router.get('/', controller.getAllSeries);
 router.get('/:id', controller.getSerieByID);
 router.post('/', controller.postNewSerie);
 router.put('/:id', controller.updateSerieWithPut);
+router.delete('/:id', controller.deleteSerie);
 
 module.exports = router;
