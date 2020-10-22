@@ -110,10 +110,48 @@ const deleteSerie = (req, res) => {
   };
 };
 
+const updateLikedWithPatch = (req, res) => {
+  const id = req.params.id;
+  try {
+    const serieToBeUpdated = series.find(serie => serie.id == id);
+    const newLiked = req.body.liked;
+    
+    const index = series.indexOf(serieToBeUpdated);
+
+    if (index >= 0) {
+      serieToBeUpdated.liked = newLiked;
+      series.splice(index, 1, serieToBeUpdated);
+      
+      fs.writeFile('./src/models/series.json', JSON.stringify(series), 'utf-8', err => {
+        if (err) {
+          return res.status(424).send({
+            message: 'Erro ao salvar arquivo'
+          });
+        } else {
+          res.status(200).send(serieToBeUpdated);
+        };
+      });
+
+    } else {
+      res.status(404).send({
+        message: 'Série não encontrada.'
+      });
+    
+    };
+  
+    
+  } catch (error) {
+    res.status(424).send({
+      message: 'Erro interno no servidor'
+    });    
+  };
+};
+
 module.exports = {
   getAllSeries,
   getSerieByID,
   postNewSerie,
   updateSerieWithPut,
-  deleteSerie
+  deleteSerie,
+  updateLikedWithPatch
 };

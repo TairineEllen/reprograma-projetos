@@ -7,5 +7,6 @@ router.get('/:id', controller.getSerieByID);
 router.post('/', controller.postNewSerie);
 router.put('/:id', controller.updateSerieWithPut);
 router.delete('/:id', controller.deleteSerie);
+router.patch('/:id/watched', controller.updateLikedWithPatch);
 
 module.exports = router;
