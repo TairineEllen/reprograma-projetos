@@ -1,6 +1,18 @@
 const series = require('../models/series.json');
 const fs = require('fs');
 
+const updateJsonFile = (res, retorno) => {
+  fs.writeFile('./src/models/series.json', JSON.stringify(series), 'utf-8', err => {
+    if (err) {
+      return res.status(424).send({
+        message: 'Erro ao salvar arquivo'
+      });
+    } else {
+      res.status(200).send(retorno);
+    };
+  });
+}; 
+
 const getAllSeries = (req, res) => {
   res.send(series);
 };
@@ -29,15 +41,8 @@ const postNewSerie = (req, res) => {
     const { name, genre, synopsis, liked, seasons } = req.body;
     series.push({ id, name, genre, synopsis, liked, seasons });
 
-    fs.writeFile('./src/models/series.json', JSON.stringify(series), 'utf-8', err => {
-      if (err) {
-        return res.status(424).send({
-          message: 'Erro ao salvar arquivo'
-        });
-      } else {
-        res.status(201).send(series.find(serie => serie.id == id));
-      };
-    });
+    updateJsonFile(res, series.find(serie => serie.id == id));
+    
   } catch (error) {
     res.status(424).send({
       message: 'Erro interno no servidor'
@@ -56,15 +61,17 @@ const updateSerieWithPut = (req, res) => {
     if (index >= 0) {
       series.splice(index, 1, newInfos);
 
-      fs.writeFile('./src/models/series.json', JSON.stringify(series), 'utf-8', err => {
-        if (err) {
-          return res.status(424).send({
-            message: 'Erro ao salvar arquivo'
-          });
-        } else {
-          res.status(201).send(series.find(serie => serie.id == id));
-        };
-      });
+      updateJsonFile(res, series.find(serie => serie.id == id));
+
+      // fs.writeFile('./src/models/series.json', JSON.stringify(series), 'utf-8', err => {
+      //   if (err) {
+      //     return res.status(424).send({
+      //       message: 'Erro ao salvar arquivo'
+      //     });
+      //   } else {
+      //     res.status(201).send(series.find(serie => serie.id == id));
+      //   };
+      // });
     } else {
       res.status(404).send({
         message: 'Série não encontrada'
@@ -85,18 +92,20 @@ const deleteSerie = (req, res) => {
     const index = series.indexOf(serieToBeDeleted);
     if (index >= 0) {
       series.splice(index, 1);
+
+      updateJsonFile(res, { message: 'Série deletada com sucesso.'});
       
-      fs.writeFile('./src/models/series.json', JSON.stringify(series), 'utf-8', err => {
-        if (err) {
-          return res.status(424).send({
-            message: 'Erro ao salvar arquivo'
-          });
-        } else {
-          res.status(200).send({
-            message: 'Série deletada com sucesso.'
-          });
-        };
-      });
+      // fs.writeFile('./src/models/series.json', JSON.stringify(series), 'utf-8', err => {
+      //   if (err) {
+      //     return res.status(424).send({
+      //       message: 'Erro ao salvar arquivo'
+      //     });
+      //   } else {
+      //     res.status(200).send({
+      //       message: 'Série deletada com sucesso.'
+      //     });
+      //   };
+      // });
     } else {
       res.status(404).send({
         message: 'Série não encontrada.'
@@ -121,16 +130,18 @@ const updateLikedWithPatch = (req, res) => {
     if (index >= 0) {
       serieToBeUpdated.liked = newLiked;
       series.splice(index, 1, serieToBeUpdated);
+
+      updateJsonFile(res, serieToBeUpdated);
       
-      fs.writeFile('./src/models/series.json', JSON.stringify(series), 'utf-8', err => {
-        if (err) {
-          return res.status(424).send({
-            message: 'Erro ao salvar arquivo'
-          });
-        } else {
-          res.status(200).send(serieToBeUpdated);
-        };
-      });
+      // fs.writeFile('./src/models/series.json', JSON.stringify(series), 'utf-8', err => {
+      //   if (err) {
+      //     return res.status(424).send({
+      //       message: 'Erro ao salvar arquivo'
+      //     });
+      //   } else {
+      //     res.status(200).send(serieToBeUpdated);
+      //   };
+      // });
 
     } else {
       res.status(404).send({
