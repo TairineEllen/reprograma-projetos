@@ -5,6 +5,7 @@ const controller = require('../controllers/seriesController');
 router.get('/', controller.getAllSeries);
 router.get('/:id', controller.getSerieByID);
 router.post('/', controller.postNewSerie);
+router.post('/:id/season', controller.postNewSeason);
 router.put('/:id', controller.updateSerieWithPut);
 router.delete('/:id', controller.deleteSerie);
 router.patch('/:id/watched', controller.updateLikedWithPatch);
