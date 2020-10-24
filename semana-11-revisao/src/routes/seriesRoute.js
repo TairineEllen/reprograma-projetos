@@ -16,5 +16,6 @@ router.delete('/:id/season/:seasonId', controller.deleteSeason);
 router.delete('/:id/season/:seasonId/episode/:episodeId', controller.deleteEpisode);
 
 router.patch('/:id/watched', controller.updateLikedWithPatch);
+router.patch('/:id/season/:seasonId/episode/:episodeId/watched', controller.updateWatchedWithPatch);
 
 module.exports = router;

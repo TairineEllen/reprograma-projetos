@@ -303,6 +303,54 @@ const deleteEpisode = (req, res) => {
   };
 };
 
+const updateWatchedWithPatch = (req, res) => {
+  const idSerie = req.params.id;
+  const idSeason = req.params.seasonId;
+  const idEpisode = req.params.episodeId;
+
+  try {
+    const serieToBeModified = series.find(serie => serie.id == idSerie);
+
+    if (series.indexOf(serieToBeModified) >= 0) {
+      const seasonToBeModified = serieToBeModified.seasons.find(season => season.id == idSeason);
+
+      if (serieToBeModified.seasons.indexOf(seasonToBeModified) >= 0) {
+        const episodeToBeUpdated = seasonToBeModified.episodes.find(episode => episode.id == idEpisode);
+
+        if (seasonToBeModified.episodes.indexOf(episodeToBeUpdated) >= 0) {
+          const newWatched = req.body.watched;
+          episodeToBeUpdated.watched = newWatched;
+
+          const index = seasonToBeModified.episodes.indexOf(episodeToBeUpdated);
+          seasonToBeModified.episodes.splice(index, 1, episodeToBeUpdated);
+
+          updateJsonFile(episodeToBeUpdated, res);
+
+        } else {
+          res.status(404).send({
+        message: 'Episódio não encontrado.'
+      });
+        }
+
+      } else {
+        res.status(404).send({
+          message: 'Temporada não encontrada.'
+        });
+      }
+
+    } else {
+      res.status(404).send({
+        message: 'Série não encontrada.'
+      });
+    };
+
+  } catch (error) {
+    res.status(424).send({
+      message: 'Erro interno no servidor'
+    });
+  };
+};
+
 module.exports = {
   getAllSeries,
   getSerieByID,
@@ -313,5 +361,6 @@ module.exports = {
   deleteSerie,
   deleteSeason,
   deleteEpisode,
-  updateLikedWithPatch
+  updateLikedWithPatch,
+  updateWatchedWithPatch
 };
