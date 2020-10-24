@@ -223,6 +223,40 @@ const postNewEpisode = (req, res) => {
   };
 };
 
+const deleteSeason = (req, res) => {
+  const idSerie = req.params.id;
+  const idSeason = req.params.seasonId;
+
+  try {
+    const serieToBeModified = series.find(serie => serie.id == idSerie);
+
+    if (series.indexOf(serieToBeModified) >= 0) {
+      const seasons = serieToBeModified.seasons;
+      const seasonToBeDeleted = seasons.find(season => season.id == idSeason);
+
+      if (seasons.indexOf(seasonToBeDeleted) >= 0) {
+        const index = seasons.indexOf(seasonToBeDeleted);
+
+        seasons.splice(index, 1);
+        updateJsonFile({ message: 'Temporada deletada com sucesso.' }, res);
+
+      } else {
+        res.status(404).send({
+          message: 'Temporada não encontrada.'
+        });
+      };
+    } else {
+      res.status(404).send({
+        message: 'Série não encontrada.'
+      });
+    };
+  } catch (error) {
+    res.status(424).send({
+      message: 'Erro interno no servidor'
+    });
+  };
+};
+
 module.exports = {
   getAllSeries,
   getSerieByID,
@@ -231,5 +265,6 @@ module.exports = {
   postNewEpisode,
   updateSerieWithPut,
   deleteSerie,
+  deleteSeason,
   updateLikedWithPatch
 };

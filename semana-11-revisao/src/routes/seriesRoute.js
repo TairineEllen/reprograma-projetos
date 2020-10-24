@@ -12,6 +12,7 @@ router.post('/:id/season/:seasonId', controller.postNewEpisode);
 router.put('/:id', controller.updateSerieWithPut);
 
 router.delete('/:id', controller.deleteSerie);
+router.delete('/:id/season/:seasonId', controller.deleteSeason);
 
 router.patch('/:id/watched', controller.updateLikedWithPatch);
 
