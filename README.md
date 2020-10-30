@@ -6,5 +6,6 @@ Aqui registro todos os projetos práticos e/ou guiados desenvolvidos durante o c
 
 - [Semana 05 - Pokedex](https://github.com/reprograma/on7-porto-s5-projeto-guiado-I "Semana 05 - Pokedex")
 - [Semana 08 - API - GET](https://github.com/reprograma/on7-porto-s8-projeto-pratico "Semana 08 - API - GET")
+- [Semana 11 - Revisão - API](https://github.com/reprograma/on7-porto-s11-projeto-revisao "Semana 11 - Revisão - API")
 
 Os exercícios resolvidos durante o curso estão [neste](https://github.com/TairineEllen/reprograma-exercicios "neste") repositório.
