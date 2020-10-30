@@ -3,13 +3,9 @@ const fs = require('fs');
 
 const updateJsonFile = (retorno, res) => {
   fs.writeFile('./src/models/series.json', JSON.stringify(series), 'utf-8', err => {
-    if (err) {
-      return res.status(424).send({
-        message: 'Erro ao salvar arquivo'
-      });
-    } else {
-      res.status(200).send(retorno);
-    };
+
+    err ? res.status(424).send({message: 'Erro ao salvar arquivo'}) : res.status(200).send(retorno);
+    
   });
 };
 
@@ -23,13 +19,7 @@ const getSerieByID = (req, res) => {
   try {
     const foundID = series.find(serie => serie.id == id);
 
-    if (foundID) {
-      res.status(200).send(foundID);
-    } else {
-      res.status(404).send({
-        message: 'Série não encontrada'
-      });
-    };
+    foundID ? res.status(200).send(foundID) : res.status(404).send({ message: 'Série não encontrada' });    
 
   } catch (err) {
     res.status(424).send({
@@ -65,17 +55,8 @@ const updateSerieWithPut = (req, res) => {
     if (index >= 0) {
       series.splice(index, 1, newInfos);
 
-      updateJsonFile(series.find(serie => serie.id == id)), res;
+      updateJsonFile(series.find(serie => serie.id == id), res);
 
-      // fs.writeFile('./src/models/series.json', JSON.stringify(series), 'utf-8', err => {
-      //   if (err) {
-      //     return res.status(424).send({
-      //       message: 'Erro ao salvar arquivo'
-      //     });
-      //   } else {
-      //     res.status(201).send(series.find(serie => serie.id == id));
-      //   };
-      // });
     } else {
       res.status(404).send({
         message: 'Série não encontrada'
@@ -100,17 +81,6 @@ const deleteSerie = (req, res) => {
 
       updateJsonFile({ message: 'Série deletada com sucesso.' }, res);
 
-      // fs.writeFile('./src/models/series.json', JSON.stringify(series), 'utf-8', err => {
-      //   if (err) {
-      //     return res.status(424).send({
-      //       message: 'Erro ao salvar arquivo'
-      //     });
-      //   } else {
-      //     res.status(200).send({
-      //       message: 'Série deletada com sucesso.'
-      //     });
-      //   };
-      // });
     } else {
       res.status(404).send({
         message: 'Série não encontrada.'
@@ -137,16 +107,6 @@ const updateLikedWithPatch = (req, res) => {
       series.splice(index, 1, serieToBeUpdated);
 
       updateJsonFile(serieToBeUpdated, res);
-
-      // fs.writeFile('./src/models/series.json', JSON.stringify(series), 'utf-8', err => {
-      //   if (err) {
-      //     return res.status(424).send({
-      //       message: 'Erro ao salvar arquivo'
-      //     });
-      //   } else {
-      //     res.status(200).send(serieToBeUpdated);
-      //   };
-      // });
 
     } else {
       res.status(404).send({
