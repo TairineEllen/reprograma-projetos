@@ -15,6 +15,7 @@ db.once('open', () => {
 });
 
 const livros = require('./routes/routeLivros');
+const funcionarios = require('./routes/routeFuncionarios');
 
 app.use(express.json());
 
@@ -28,5 +29,6 @@ app.use('/', (req, res, next) => {
 });
 
 app.use('/livros', livros);
+app.use('/funcionarios', funcionarios);
 
 module.exports = app;
