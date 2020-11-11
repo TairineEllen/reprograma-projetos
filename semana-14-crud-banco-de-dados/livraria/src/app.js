@@ -14,6 +14,8 @@ db.once('open', () => {
   console.log('Conexão feita com sucesso!');
 });
 
+const livros = require('./routes/routeLivros');
+
 app.use(express.json());
 
 app.use('/', (req, res, next) => {
@@ -24,5 +26,7 @@ app.use('/', (req, res, next) => {
   );
   next();
 });
+
+app.use('/livros', livros);
 
 module.exports = app;
