@@ -18,7 +18,6 @@ const postLivro = (req, res) => {
       res.send(424).send({ message: err.message });
     } else {
       let livro = new livros(req.body);
-      console.log(count)
       livro.id = count + 1;
 
       livro.save(err => {
@@ -28,8 +27,22 @@ const postLivro = (req, res) => {
   });
 };
 
+const deleteLivro = (req, res) => {
+  const id = req.params.id;
+  livros.find({ id }, (err, livro) => {
+    if (livro.length > 0) {
+      livros.deleteOne({ id }, err => {
+        err ? res.status(424).send({ message: err.message }) : res.status(200).send('Livro excluído com sucesso');
+      });
+    } else {
+      res.status(404).send('Livro não encontrado');
+    };
+  });
+};
+
 module.exports = {
   getLivros,
   getLivrosEmEstoque,
-  postLivro
+  postLivro,
+  deleteLivro
 };
