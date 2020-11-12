@@ -12,6 +12,31 @@ const getLivrosEmEstoque = (req, res) => {
   });
 };
 
+const getLivrosPorEditora = (req, res) => {
+    livros.find((err, livros) => {
+      const editoras = [];
+      if (err) {
+        res.status(424).send({ message: err.message });
+      } else {
+        livros.map(livro => livro.editora).forEach(editora => {
+          if (editoras.indexOf(editora) === -1) {
+            editoras.push(editora);
+          };
+        });
+        const livrosPorEditora = editoras.map(editora => ({
+          editora,
+          livros: livros.filter(livro => livro.editora == editora).map(livro => ({
+            id: livro.id,
+            titulo: livro.titulo,
+            autoria: livro.autoria,
+            emEstoque: livro.emEstoque
+          }))
+        }));
+        res.status(200).send(livrosPorEditora);
+      };    
+  });
+};
+
 const postLivro = (req, res) => {
   livros.countDocuments((err, count) => {
     if (err) {
@@ -56,6 +81,7 @@ const deleteLivro = (req, res) => {
 module.exports = {
   getLivros,
   getLivrosEmEstoque,
+  getLivrosPorEditora,
   postLivro,
   putLivro,
   deleteLivro
