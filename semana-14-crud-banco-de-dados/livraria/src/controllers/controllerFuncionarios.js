@@ -6,6 +6,26 @@ const getFuncionarios = (req, res) => {
   });
 };
 
+const getIdadeFuncionarioPeloId = (req, res) => {
+  const id = req.params.id;
+  funcionarios.find({ id }, (err, funcionario) => {
+    if (err) {
+      res.status(424).send({ message: err.message });
+    } else {
+      if (funcionario.length > 0) {
+        const dataAtual = new Date();
+        const idadeFuncionario = funcionario.map(func => ({
+          nome: func.nome,
+          idade: dataAtual.getFullYear() - parseInt(func.dataDeNascimento.toString().split('/')[2])
+        }));
+        res.status(200).send(idadeFuncionario);       
+      } else {
+        res.status(404).send('Funcionário não encontrado');
+      };
+    };    
+  });
+};
+
 const postFuncionario = (req, res) => {
   funcionarios.countDocuments((err, count) => {
     if (err) {
@@ -49,6 +69,7 @@ const deleteFuncionario = (req, res) => {
 
 module.exports = {
   getFuncionarios,
+  getIdadeFuncionarioPeloId,
   postFuncionario,
   putFuncionario,
   deleteFuncionario
