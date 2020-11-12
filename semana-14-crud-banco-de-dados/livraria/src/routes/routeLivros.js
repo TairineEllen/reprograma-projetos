@@ -5,6 +5,7 @@ const controller = require('../controllers/controllerLivros');
 router.get('/', controller.getLivros);
 router.get('/estoque', controller.getLivrosEmEstoque);
 router.post('/', controller.postLivro);
+router.put('/:id', controller.putLivro);
 router.delete('/:id', controller.deleteLivro);
 
 module.exports = router;

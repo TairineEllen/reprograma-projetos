@@ -27,6 +27,19 @@ const postLivro = (req, res) => {
   });
 };
 
+const putLivro = (req, res) => {
+  const id = req.params.id;
+  livros.find({ id }, (err, livro) => {
+    if (livro.length > 0) {
+      livros.updateOne({ id }, { $set: req.body }, err => {
+        err ? res.status(424).send({ message: err.message }) : res.status(200).send('Livro atualizado com sucesso');
+      });
+    } else {
+      res.status(404).send('Livro não encontrado');
+    };
+  });
+};
+
 const deleteLivro = (req, res) => {
   const id = req.params.id;
   livros.find({ id }, (err, livro) => {
@@ -44,5 +57,6 @@ module.exports = {
   getLivros,
   getLivrosEmEstoque,
   postLivro,
+  putLivro,
   deleteLivro
 };
