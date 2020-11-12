@@ -2,9 +2,15 @@ const livros = require('../models/livros');
 
 const getLivros = (req, res) => {
   livros.find((err, livros) => {
-    res.send(livros)
-  })
-}
+    err ? res.status(424).send({ message: err.message }) : res.status(200).send(livros);
+  });
+};
+
+const getLivrosEmEstoque = (req, res) => {
+  livros.find({ emEstoque: true }, (err, livros) => {
+    err ? res.status(424).send({ message: err.message }) : res.status(200).send(livros);
+  });
+};
 
 const postLivro = (req, res) => {
   livros.countDocuments((err, count) => {
@@ -24,5 +30,6 @@ const postLivro = (req, res) => {
 
 module.exports = {
   getLivros,
+  getLivrosEmEstoque,
   postLivro
 };
