@@ -34,8 +34,22 @@ const putFuncionario = (req, res) => {
   });
 };
 
+const deleteFuncionario = (req, res) => {
+  const id = req.params.id;
+  funcionarios.find({ id }, (err, funcionario) => {
+    if (funcionario.length > 0) {
+      funcionarios.deleteOne({ id }, err => {
+        err ? res.status(424).send({ message: err.message }) : res.status(200).send('Funcionário excluído com sucesso');
+      });      
+    } else {
+      res.status(404).send('Funcionário não encontrado')
+    };
+  });
+};
+
 module.exports = {
   getFuncionarios,
   postFuncionario,
-  putFuncionario  
+  putFuncionario,
+  deleteFuncionario
 };
